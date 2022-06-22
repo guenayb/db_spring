@@ -1,20 +1,32 @@
 package com.example.demo.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import org.springframework.stereotype.Component;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@Component
 public class Betriebsstelle {
 	@JsonIgnore
 	private String abk;
+	
+	@JsonProperty("Name")
 	private String name;
+	
+	@JsonProperty("Kurzname")
 	private String kurzName;
+	
+	@JsonProperty("Typ")
 	private String typ;
+	
 	public Betriebsstelle(String name, String kurzName, String typ, String abk) {
-		super();
 		this.name = name;
 		this.kurzName = kurzName;
 		this.typ = typ;
 		this.abk = abk;
 	}
+
 	public Betriebsstelle() {
 		
 	}
